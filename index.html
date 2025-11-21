@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/first_app/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Neon Tetris 3D</title>
+    <script type="module" crossorigin src="/first_app/assets/index-DMydHbgZ.js"></script>
+    <link rel="stylesheet" crossorigin href="/first_app/assets/index-CCpPvnrw.css">
+  </head>
+  <body>
+    <div id="game-container"></div>
+    
+    <div id="ui-layer">
+      <div class="hud-panel left">
+        <div class="panel-title">SCORE</div>
+        <div id="score" class="panel-value">0</div>
+        <div class="panel-title">LEVEL</div>
+        <div id="level" class="panel-value">1</div>
+        <div class="panel-title">LINES</div>
+        <div id="lines" class="panel-value">0</div>
+      </div>
+      
+      <div class="hud-panel right">
+        <div class="panel-title">NEXT</div>
+        <div id="next-piece-preview"></div>
+      </div>
+
+      <div id="start-screen" class="overlay active">
+        <h1 class="game-title">NEON TETRIS 3D</h1>
+        <p class="controls-info">
+          ARROWS to Move/Rotate<br>
+          SPACE to Drop
+        </p>
+        <button id="start-btn" class="neon-btn">START SYSTEM</button>
+      </div>
+
+      <div id="game-over-screen" class="overlay hidden">
+        <h1 class="game-title">SYSTEM FAILURE</h1>
+        <div class="final-score">SCORE: <span id="final-score-val">0</span></div>
+        <button id="restart-btn" class="neon-btn">REBOOT</button>
+      </div>
+    </div>
+
+  </body>
+</html>
