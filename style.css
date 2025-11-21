@@ -1,0 +1,140 @@
+:root {
+  --neon-blue: #00f3ff;
+  --neon-pink: #ff00ff;
+  --neon-green: #00ff9d;
+  --neon-yellow: #ffe600;
+  --bg-color: #050510;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+  --font-main: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  margin: 0;
+  overflow: hidden;
+  background-color: var(--bg-color);
+  font-family: var(--font-main);
+  color: white;
+  user-select: none;
+}
+
+#game-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 1;
+}
+
+#ui-layer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.hud-panel {
+  position: absolute;
+  top: 20px;
+  background: var(--glass-bg);
+  backdrop-filter: blur(10px);
+  border: 1px solid var(--glass-border);
+  padding: 20px;
+  border-radius: 10px;
+  width: 150px;
+  box-shadow: 0 0 20px rgba(0, 243, 255, 0.1);
+}
+
+.hud-panel.left {
+  left: 20px;
+}
+
+.hud-panel.right {
+  right: 20px;
+}
+
+.panel-title {
+  font-size: 0.8rem;
+  color: var(--neon-blue);
+  margin-bottom: 5px;
+  letter-spacing: 2px;
+}
+
+.panel-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 15px;
+  text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(5, 5, 16, 0.85);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: auto;
+  transition: opacity 0.3s ease;
+}
+
+.overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.game-title {
+  font-size: 4rem;
+  color: transparent;
+  -webkit-text-stroke: 2px var(--neon-pink);
+  text-shadow: 0 0 20px var(--neon-pink);
+  margin-bottom: 20px;
+  letter-spacing: 5px;
+  text-align: center;
+}
+
+.controls-info {
+  text-align: center;
+  line-height: 1.6;
+  color: #aaa;
+  margin-bottom: 40px;
+  font-size: 1.2rem;
+}
+
+.neon-btn {
+  background: transparent;
+  border: 2px solid var(--neon-green);
+  color: var(--neon-green);
+  padding: 15px 40px;
+  font-size: 1.5rem;
+  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  transition: all 0.2s ease;
+  box-shadow: 0 0 15px var(--neon-green);
+  font-family: var(--font-main);
+  pointer-events: auto;
+  /* Ensure clickable */
+  z-index: 1000;
+  /* Ensure on top */
+  position: relative;
+}
+
+.neon-btn:hover {
+  background: var(--neon-green);
+  color: black;
+  box-shadow: 0 0 30px var(--neon-green);
+}
+
+.final-score {
+  font-size: 2rem;
+  margin-bottom: 30px;
+}
